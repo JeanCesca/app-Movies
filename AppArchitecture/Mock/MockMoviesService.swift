@@ -9,7 +9,11 @@ import Foundation
 
 class MockMoviesService: MoviesServicing {
     
+    var getMoviesCounter = 0
+    
     func getMovies(_ completion: @escaping (Result<MovieResponse, Error>) -> Void) {
+        
+        getMoviesCounter += 1
         
         let response = MovieResponse(results: [
             Movie(id: 436270, title: "Black Adam", overview: "Nearly 5,000 years after he was bestowed with the almighty powers of the Egyptian gods—and imprisoned just as quickly—Black Adam is freed from his earthly tomb, ready to unleash his unique form of justice on the modern world.", posterPath: "/3zXceNTtyj5FLjwQXuPvLYK5YYL.jpg"),

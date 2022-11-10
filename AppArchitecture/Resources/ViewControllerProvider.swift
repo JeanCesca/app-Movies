@@ -33,7 +33,7 @@ struct ViewControllerProvider {
             movieService = MockMoviesService()
         }
         
-        let viewModel = MovieViewModel(service: movieService)
+        let viewModel = MoviesViewModel(service: movieService)
         let vc = MoviesViewController(viewModel: viewModel)
         return vc
     }

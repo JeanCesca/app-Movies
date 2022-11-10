@@ -9,16 +9,16 @@ import UIKit
 
 class MoviesViewController: UIViewController {
     
-    private let tableView: UITableView = {
+    public let tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(MovieCell.self, forCellReuseIdentifier: MovieCell.id)
         return tableView
     }()
     
-    let viewModel: MovieViewModel
+    let viewModel: MoviesViewModel
     
-    init(viewModel: MovieViewModel) {
+    init(viewModel: MoviesViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }

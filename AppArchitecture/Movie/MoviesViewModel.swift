@@ -7,7 +7,7 @@
 
 import Foundation
 
-class MovieViewModel {
+class MoviesViewModel {
     
     var movies: Variable<[Movie]> = Variable([])
     
