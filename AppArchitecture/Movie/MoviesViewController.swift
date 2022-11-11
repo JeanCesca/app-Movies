@@ -17,6 +17,7 @@ class MoviesViewController: UIViewController {
     }()
     
     let viewModel: MoviesViewModel
+    weak var coordinator: MainCoordinator?
     
     init(viewModel: MoviesViewModel) {
         self.viewModel = viewModel
@@ -82,10 +83,8 @@ extension MoviesViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-
         let movie = viewModel.movies.value[indexPath.row]
         
-        let vc = ViewControllerProvider.getDetailViewController(for: movie)
-        navigationController?.pushViewController(vc, animated: true)
+        coordinator?.displayDetails(of: movie)
     }
 }
